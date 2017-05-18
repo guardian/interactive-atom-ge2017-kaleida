@@ -1,0 +1,89 @@
+<div class="gv-graphic___header">Most shared articles since 17 April</div>
+
+
+<div class="initial-view" id="closedView">
+
+{{#sections}}
+{{#initShow}}
+<div class="gv-graphic__item" id="{{{id}}}">
+	<!-- <div class='gv-graphic__chart'>
+		<div class="gv-graphic__chart-bar total"></div>
+
+		<div class="gv-graphic__chart-bar pub" style="width:{{{pcVal}}}%"></div>
+	</div> -->
+	<div class='gv-graphic__chart'>
+		<!-- <div class="gv-graphic__chart-bar total"></div> -->
+
+		<div class="gv-graphic__chart-bar {{{customClass}}}" style="width:{{{pcVal}}}%"></div>
+	</div>
+<div class='gv-text-holder gv-big-number {{{customClass}}} no-bg-color'>{{{guNum}}}</div>
+
+	<div class='gv-text-holder gv-pub-title'>{{{publisherName}}}</div>
+	<div class='gv-text-holder gv-headline-text {{{customClass}}} no-bg-color'><a href="{{{url}}}">{{{headline}}}</a></div>
+	
+
+	
+
+</div>			
+{{/initShow}}
+{{/sections}}
+
+
+<div class='cta-button-holder' id='gvShowButton'>
+		<div class='cta-button'>
+			Show more
+		</div>	
+		
+		<span class="inline-arrow-white-right inline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path fill="#fff" d="M22.8 14.6L15.2 7l-.7.7 5.5 6.6H6v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9"></path></svg>
+		</span>
+</div>	
+
+</div>
+
+
+
+<div class="open-view no-height" id="openView">
+
+{{#sections}}
+
+<div class="gv-graphic__item" id="{{{id}}}">
+	<!-- <div class='gv-graphic__chart'>
+		<div class="gv-graphic__chart-bar total"></div>
+
+		<div class="gv-graphic__chart-bar pub" style="width:{{{pcVal}}}%"></div>
+	</div> -->
+	<div class='gv-graphic__chart'>
+		<!-- <div class="gv-graphic__chart-bar total"></div> -->
+
+		<div class="gv-graphic__chart-bar {{{customClass}}}" style="width:{{{pcVal}}}%;" ></div>
+	</div>
+
+	<div class='gv-text-holder gv-pub-title'>{{{publisherName}}}</div>
+	<div class='gv-text-holder gv-headline-text'><a href="{{{url}}}">{{{headline}}}</a></div>
+	<div class='gv-text-holder gv-big-number {{{customClass}}} no-bg-color'>{{{guNum}}}</div>
+
+	
+
+</div>			
+
+{{/sections}}
+
+
+<div class='cta-button-holder'  id='gvHideButton'>
+		<div class='cta-button'>
+			Show less
+		</div>	
+		
+		<span class="inline-arrow-white-right inline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" transform="rotate(90deg)"><path fill="#fff" d="M22.8 14.6L15.2 7l-.7.7 5.5 6.6H6v1.5h14l-5.5 6.6.7.7 7.6-7.6v-.9"></path></svg>
+		</span>
+</div>	
+
+
+
+
+</div>
+
+<div class="logo-holder">
+	
+	<div class="logo-section logo-image"><image src='<%= path %>/assets/kaleidaLogo.jpg'/></div><div class="logo-section ">Data supplied by</div>
+</div>

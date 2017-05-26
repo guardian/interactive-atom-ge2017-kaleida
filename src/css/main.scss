@@ -3,10 +3,9 @@
 @import "fonts";
 @import "bower_components/guss-grid-system/_grid-system.scss";
 
-$bar-one: #63717a;
-$bar-two: $news-main-2;
-
-$accent-color: $news-main-2;
+$accent-color: $news-main-1;
+$bar-one: $accent-color;
+$bar-two: $accent-color;
 
 $indy-color: #ec1c30;
 $gu-color: $news-main-1;
@@ -42,19 +41,52 @@ body{
 
 .gv-graphic__item{
 	width: 100%;
-	margin: 24px 0 $gs-baseline; 
+	margin:0;
+	background-color: #FFF;
 
 }
 
+.gv-graphic__item:nth-child(even) {
+   background-color: rgba($neutral-2, 0.075);
+}
+
+
 .gv-text-holder{
-	
+	padding: 0 6px;
 } 
+
+
+
+
+
+.gv-graphic___header{
+	@include fs-header(2);
+	font-weight: 600;
+}
+
+.gv-graphic___subheader{
+	@include fs-headline(2);
+	color:$neutral-3;
+	margin-bottom: gs-height(1);
+	font-weight: 200;
+}
+
+.gv-pub-title{
+	@include fs-textSans(3);
+	font-weight:600;
+	line-height:18px;
+	//@include fs-header(1);
+	color: $neutral-1;
+}
 
 .gv-headline-text{
 	width:calc(100% - 20px);
-	margin-bottom: 1px;
+	padding-bottom: 18px;
+    margin-bottom: 1px;
+    @include fs-textSans(3);
+    line-height:18px;
 	a {
-		@include fs-headline(2);
+		
 		color: $neutral-2;
 		text-decoration:none;
 	}
@@ -63,16 +95,6 @@ body{
 	
 		text-decoration:underline;
 	}
-}
-
-.gv-pub-title{
-	@include fs-header(1);
-	color: $neutral-1;
-}
-
-.gv-graphic___header{
-	@include fs-header(2);
-	font-weight: 600;
 }
 
 .gv-big-number {
@@ -105,7 +127,7 @@ body{
 	width:calc(100%-$gs-gutter);
 
 	height:auto;
-	margin:$gs-baseline 0 3px;
+	margin:0 0 3px;
 }
 
 .gv-graphic__chart-bar{
@@ -156,7 +178,7 @@ body{
     background-color: $neutral-3;
     border-radius: 999px;
     cursor: pointer;
-    margin: gs-height(1) 0 gs-height(1);
+    margin: $gs-baseline 0 0;
     width:170px;
 
     @include mq(tablet){
@@ -194,13 +216,18 @@ body{
 	display:none;
 }
 
+
+
 .logo-holder{
+	display:block;
 	width:100%;
+	margin-top:gs-height(1) + $gs-baseline;
+
 	.logo-section{
 		@include fs-textSans(3);
 		color:$neutral-3;
 		display: inline-block;
-		float:right;
+		float:left;
 	}
 
 	.logo-image{

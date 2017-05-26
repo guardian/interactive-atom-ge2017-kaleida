@@ -1,14 +1,13 @@
 import Mustache from 'mustache'
 import rp from 'request-promise'
-
-
 import {
     maxBy as _maxBy
 } from 'lodash';
 
-import mainTemplate from './src/templates/main.html!text'
+import mainTemplate from './src/templates/main.html!text';
 
 let initListLength = 4;
+
 
 export async function render() {
 
@@ -39,7 +38,7 @@ function formatData(data) {
         
         count++;
     })
-
+// console.log(page, initListLength)
     return items;
 }
 

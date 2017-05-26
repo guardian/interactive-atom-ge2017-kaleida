@@ -1,17 +1,39 @@
 
-let chartsNum = 5;
+let windowWidth;
 
+if(!window){
+    windowWidth = 970;
+}else{
+    windowWidth = parent.window.innerWidth;
+}
+var isMobile = windowWidth < 980 ? true : false;
+
+
+let listLen;
+
+
+!isMobile ? listLen = 9 : listLen = 4;
+
+
+console.log(isMobile, windowWidth);
 
 function initView(){
-	 // [].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
-  //       let n = el.getAttribute('id').split('-')[1];
+	 [].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
+        let n = el.getAttribute('id').split('-')[1];
 
-  //       if (n > chartsNum ){ el.classList.add("gv-graphic__hidden") }
-  //       console.log(n)
+        if (n > listLen ){ el.classList.add('gv-graphic__hidden') }
+        
+        console.log(n)
 
-  //   });
+    });
+	
 
+	//gv-graphic__hidden
+
+	
 	addListeners(); 
+
+	window.resize();
 }
 
 function addListeners(){
@@ -19,16 +41,26 @@ function addListeners(){
 	let hideAllEl = document.getElementById("closedView");
 
 	document.getElementById("gvShowButton").addEventListener('click', function(){ 
-				hideAllEl.classList.add('no-height');
-				showAllEl.classList.remove('no-height');
+				[].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
+				        let n = el.getAttribute('id').split('-')[1];
+				        if (n > listLen ){ el.classList.remove('gv-graphic__hidden') }
+
+				    });
+				this.classList.add('gv-graphic__hidden');
+				document.getElementById("gvHideButton").classList.remove('gv-graphic__hidden');
 
 		  		window.resize()
 		    });
 
 	document.getElementById("gvHideButton").addEventListener('click', function(){ 
-				hideAllEl.classList.remove('no-height');
-				showAllEl.classList.add('no-height');
+				[].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
+				        let n = el.getAttribute('id').split('-')[1];
+				        if (n > listLen ){ el.classList.add('gv-graphic__hidden') }
 
+				    });
+				this.classList.add('gv-graphic__hidden');
+				document.getElementById("gvShowButton").classList.remove('gv-graphic__hidden');
+				
 		  		window.resize()
 		    });
 

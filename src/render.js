@@ -26,7 +26,7 @@ function formatData(data) {
     let count = 0;
 	let maxObj =  _maxBy( items, function(o) { return o.socialInteractions * 1 });
 	let maxVal = maxObj.socialInteractions
-   
+
 
     items.map((item) => {
         item.id = "item-" + count;
@@ -35,7 +35,7 @@ function formatData(data) {
         item.pcVal = ((item.socialInteractions * 1)/maxVal)*100;
         item.customClass = getCustomClass(item.publisherName);
         item.initShow = getInitShowVal(count);
-        
+
         count++;
     })
 // console.log(page, initListLength)
@@ -57,10 +57,10 @@ function guNumFormat(n){
 
 }
 
-function getInitShowVal(count){ 
-	let v; 
-	count > initListLength ? v = false : v = true; 
-	return v 
+function getInitShowVal(count){
+	let v;
+	count > initListLength ? v = false : v = true;
+	return v
 };
 
 

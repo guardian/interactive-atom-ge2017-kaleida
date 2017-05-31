@@ -4,15 +4,15 @@ let windowWidth;
 if(!window){
     windowWidth = 970;
 }else{
-    windowWidth = parent.window.innerWidth;
+    windowWidth = window.innerWidth;
 }
-var isMobile = windowWidth < 980 ? true : false;
+var isMobile = windowWidth < 600 ? true : false;
 
 
 let listLen;
 
 
-!isMobile ? listLen = 9 : listLen = 4;
+!isMobile ? listLen = 5 : listLen = 4;
 
 
 console.log(isMobile, windowWidth);
@@ -22,12 +22,12 @@ function initView(){
         let n = el.getAttribute('id').split('-')[1];
 
         if (n > listLen ){ el.classList.add('gv-graphic__hidden') }
-        
+
         console.log(n)
 
     });
-	
-	addListeners(); 
+
+	addListeners();
 
 	window.resize();
 }
@@ -36,7 +36,7 @@ function addListeners(){
 	let showAllEl = document.getElementById("openView");
 	let hideAllEl = document.getElementById("closedView");
 
-	document.getElementById("gvShowButton").addEventListener('click', function(){ 
+	document.getElementById("gvShowButton").addEventListener('click', function(){
 				[].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
 				        let n = el.getAttribute('id').split('-')[1];
 				        if (n > listLen ){ el.classList.remove('gv-graphic__hidden') }
@@ -48,7 +48,7 @@ function addListeners(){
 		  		window.resize()
 		    });
 
-	document.getElementById("gvHideButton").addEventListener('click', function(){ 
+	document.getElementById("gvHideButton").addEventListener('click', function(){
 				[].slice.apply(document.querySelectorAll('.gv-graphic__item')).forEach(el => {
 				        let n = el.getAttribute('id').split('-')[1];
 				        if (n > listLen ){ el.classList.add('gv-graphic__hidden') }
@@ -56,7 +56,7 @@ function addListeners(){
 				    });
 				this.classList.add('gv-graphic__hidden');
 				document.getElementById("gvShowButton").classList.remove('gv-graphic__hidden');
-				
+
 		  		window.resize()
 		    });
 

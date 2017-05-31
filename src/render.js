@@ -24,7 +24,7 @@ export async function render() {
 function formatData(data) {
     let items = data.sheets.Sheet1;
     let count = 0;
-	let maxObj =  _maxBy( items, function(o) { return o.socialInteractions * 1 }) ;
+	let maxObj =  _maxBy( items, function(o) { return o.socialInteractions * 1 });
 	let maxVal = maxObj.socialInteractions
    
 

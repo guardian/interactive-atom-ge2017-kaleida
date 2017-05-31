@@ -27,10 +27,6 @@ function initView(){
 
     });
 	
-
-	//gv-graphic__hidden
-
-	
 	addListeners(); 
 
 	window.resize();

@@ -47,6 +47,7 @@ function guNumFormat(n){
 
 	if(v > 999 && v <1000000){
 		let r = n/1000;
+		r = r.toFixed(3);
 		let s = r.toString();
 		let t = s.split(".");
 		v = t[0]+","+t[1];
